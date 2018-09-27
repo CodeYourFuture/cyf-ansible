@@ -15,3 +15,8 @@
     - libasound2
     - libgtk2.0-0
     - libxss1
+
+- name: Remove Amazon app package
+  apt:
+    name: ubuntu-web-launchers
+    state: absent
