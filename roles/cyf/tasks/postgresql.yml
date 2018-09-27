@@ -1,7 +1,16 @@
-- name: install PostgreSQL
+- name: Install PostgreSQL
   apt:
     name: "{{ item }}"
     state: present
   with_items:
     - postgresql
     - postgresql-contrib
+    - libpq-dev
+    - python-psycopg2
+
+- name: Add local user as Postgres Superuser
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: coder
+    role_attr_flags: SUPERUSER
