@@ -1,12 +1,10 @@
 - name: Install PostgreSQL
   apt:
-    name: "{{ item }}"
+    name: [ postgresql, postgresql-contrib, libpq-dev, python-psycopg2 ]
     state: present
-  with_items:
-    - postgresql
-    - postgresql-contrib
-    - libpq-dev
-    - python-psycopg2
+
+- name: Make sure postgres is running
+  service: name=postgresql state=started enabled=yes
 
 - name: Add local user as Postgres Superuser
   become: yes
