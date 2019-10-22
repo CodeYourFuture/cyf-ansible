@@ -26,7 +26,7 @@
 
 - name: Install Ubuntu Desktop
   apt:
-    name: ubuntu-desktop
+    name: [ ubuntu-desktop, vlc ]
     state: present
 
 - name: Remove Amazon app package
