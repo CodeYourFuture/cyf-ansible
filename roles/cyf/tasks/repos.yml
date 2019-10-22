@@ -1,0 +1,44 @@
+- name: Add PostgreSQL repo key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    state: present
+- name: Add PostgreSQL repo
+  apt_repo:
+    repo: deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+    state: present
+
+- name: Add MongoDB repo key
+  apt_key:
+    url: https://www.mongodb.org/static/pgp/server-4.2.asc
+    state: present
+- name: Add MongoDB repo
+  apt_repo:
+    repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse
+    state: present
+
+- name: add Docker repo key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+- name: add Docker repo
+  apt_repo:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+- name: Add nodesource repo key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+- name: Add nodesource repo
+  apt_repo:
+    repo: deb https://deb.nodesource.com/node_12.x bionic main
+    state: present
+
+- name: Add Google Chrome repo key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+- name: Add Google Chrome repo
+  apt_repo:
+    repo: deb https://dl.google.com/linux/chrome/deb/ stable main
+    state: present
