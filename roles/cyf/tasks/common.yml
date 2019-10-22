@@ -1,3 +1,8 @@
+- name: Install gnupg and software-properties-common
+  apt:
+    name: [ gnupg, software-properties-common  ]
+    state: present
+
 - include_tasks: ppas.yml
 - include_tasks: repos.yml
 
@@ -19,7 +24,14 @@
 - name: Enlarge swap file to 1.5x system RAM
   script: ../scripts/swap.sh
 
+- name: Install Ubuntu Desktop
+  apt:
+    name: ubuntu-desktop
+    state: present
+
 - name: Remove Amazon app package
   apt:
     name: ubuntu-web-launchers
     state: absent
+    autoremove: yes
+    purge: yes
