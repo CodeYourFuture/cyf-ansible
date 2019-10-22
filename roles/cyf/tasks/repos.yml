@@ -3,7 +3,7 @@
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
     state: present
 - name: Add PostgreSQL repo
-  apt_repo:
+  apt_repository:
     repo: deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
     state: present
 
@@ -12,7 +12,7 @@
     url: https://www.mongodb.org/static/pgp/server-4.2.asc
     state: present
 - name: Add MongoDB repo
-  apt_repo:
+  apt_repository:
     repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse
     state: present
 
@@ -21,7 +21,7 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 - name: add Docker repo
-  apt_repo:
+  apt_repository:
     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
     state: present
 
@@ -30,7 +30,7 @@
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
     state: present
 - name: Add nodesource repo
-  apt_repo:
+  apt_repository:
     repo: deb https://deb.nodesource.com/node_12.x bionic main
     state: present
 
@@ -39,6 +39,6 @@
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
 - name: Add Google Chrome repo
-  apt_repo:
+  apt_repository:
     repo: deb https://dl.google.com/linux/chrome/deb/ stable main
     state: present
