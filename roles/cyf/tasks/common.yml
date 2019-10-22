@@ -16,6 +16,9 @@
     name: preload
     state: present
 
+- name: Enlarge swap file to 1.5x system RAM
+  script: ../scripts/swap.sh
+
 - name: Remove Amazon app package
   apt:
     name: ubuntu-web-launchers
