@@ -1,0 +1,29 @@
+- name: add LibreOffice PPA
+  apt_repository:
+    repo: ppa:libreoffice/ppa
+    filename: ppa
+    state: present
+
+- name: add Git PPA
+  apt_repository:
+    repo: ppa:git-core/ppa
+    filename: ppa
+    state: present
+
+- name: add Flatpak PPA
+  apt_repository:
+    repo: ppa:alexlarsson/flatpak
+    filename: flatpak
+    state: present
+
+- name: add FFMPEG PPA
+  apt_repository:
+    repo: ppa:jonathonf/ffmpeg-4
+    filename: ffmpeg-4
+    state: present
+
+- name: add VLC PPA
+  apt_repository:
+    repo: ppa:jonathonf/vlc-3
+    filename: vlc-3
+    state: present    
