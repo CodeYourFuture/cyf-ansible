@@ -11,6 +11,11 @@
     name: [ linux-generic-hwe-18.04, xserver-xorg-hwe-18.04 ]
     state: present
 
+- name: Install preload to reduce application load time
+  apt:
+    name: preload
+    state: present
+
 - name: Remove Amazon app package
   apt:
     name: ubuntu-web-launchers
