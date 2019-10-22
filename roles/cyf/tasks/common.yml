@@ -6,6 +6,11 @@
     upgrade: yes
     update_cache: yes
 
+- name: Install hardware enablement stack (newer kernel and X)
+  apt:
+    name: [ linux-generic-hwe-18.04, xserver-xorg-hwe-18.04 ]
+    state: present
+
 - name: Remove Amazon app package
   apt:
     name: ubuntu-web-launchers
