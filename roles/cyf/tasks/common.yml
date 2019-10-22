@@ -1,4 +1,5 @@
 - include_tasks: ppas.yml
+- include_tasks: repos.yml
 
 - name: Update and upgrade apt packages
   apt:
