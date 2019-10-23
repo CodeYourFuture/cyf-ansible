@@ -1,4 +1,10 @@
 - name: install MongoDB
   apt:
-    name: mongodb
+    name: mongodb-org
     state: present
+
+- name: enable mongod service
+  systemd:
+    name: mongod
+    state: started
+    enabled: yes

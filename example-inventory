@@ -4,5 +4,3 @@ machine2.hostname   ansible_ssh_host=10.0.1.16 ansible_user=ansible ansible_ssh_
 # OR to run locally
 
 localhost   ansible_connection=local
-
-

@@ -2,4 +2,16 @@
   name: Setup CYF machines
   become: yes
   roles:
-    - cyf
+    - role: cyf
+    - role: gantsign.oh-my-zsh
+      users:
+       - username: coder
+         oh_my_zsh:
+           theme: robbyrussell
+           plugins:
+             - git
+             - npm
+             - docker
+
+    
+
