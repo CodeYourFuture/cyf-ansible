@@ -1,2 +1,4 @@
 - name: install Slack
-  command: snap install slack --classic
+  apt:
+    name: slack-desktop
+    state: present

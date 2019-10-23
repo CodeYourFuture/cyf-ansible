@@ -35,3 +35,9 @@
     state: absent
     autoremove: yes
     purge: yes
+
+- name: stop and disable apport (removes error reporting)
+  systemd:
+    name: apport
+    state: stopped
+    enabled: no

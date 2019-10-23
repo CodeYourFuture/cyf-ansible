@@ -1,0 +1,16 @@
+- name: install Docker
+  apt:
+    name: [ docker-ce, docker-ce-cli, containerd.io ]
+    state: present
+
+- name: enable docker service
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: add user to docker group
+  user:
+    name: "{{ username }}"
+    groups: docker
+    append: yes

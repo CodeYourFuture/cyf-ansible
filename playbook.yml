@@ -10,5 +10,8 @@
            theme: robbyrussell
            plugins:
              - git
+             - npm
+             - docker
+
     
 

@@ -1,14 +1,24 @@
 - name: Install PostgreSQL
   apt:
-    name: [ postgresql-12 ]
+    name: [ postgresql-12, python3-psycopg2 ]
     state: present
 
-- name: Make sure postgres is running
-  service: name=postgresql state=started enabled=yes
+- name: enable and start postgresql service
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes
 
 - name: Add local user as Postgres Superuser
   become: yes
   become_user: postgres
   postgresql_user:
-    name: coder
+    name: "{{ username }}"
     role_attr_flags: SUPERUSER
+
+- name: Add database for local user
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: "{{ username }}"
+    owner: "{{ username }}"
